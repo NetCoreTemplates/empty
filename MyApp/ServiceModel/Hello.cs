@@ -1,16 +1,12 @@
-﻿using ServiceStack;
+﻿namespace MyApp.ServiceModel;
 
-namespace MyApp.ServiceModel
+[Route("/hello/{Name}")]
+public class Hello : IGet, IReturn<HelloResponse>
 {
-    [Route("/hello")]
-    [Route("/hello/{Name}")]
-    public class Hello : IReturn<HelloResponse>
-    {
-        public string? Name { get; set; }
-    }
+    public string? Name { get; set; }
+}
 
-    public class HelloResponse
-    {
-        public string? Result { get; set; }
-    }
+public class HelloResponse
+{
+    public string? Result { get; set; }
 }

@@ -1,4 +1,9 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using MyApp.ServiceInterface;
+
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+
+services.AddServiceStack(typeof(MyServices).Assembly);
 
 var app = builder.Build();
 
@@ -10,6 +15,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
     app.UseHttpsRedirection();
 }
-app.UseServiceStack(new AppHost());
+
+app.UseStaticFiles();
+
+app.UseServiceStack(new AppHost(), options => {
+    options.MapEndpoints();
+});
 
 app.Run();
