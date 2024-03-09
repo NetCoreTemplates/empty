@@ -1,6 +1,6 @@
 # empty
 
-.NET 6.0 Empty Web Single Project Template
+.NET 8.0 Empty Web Single Project Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/web.png)](http://web.web-templates.io/)
 
